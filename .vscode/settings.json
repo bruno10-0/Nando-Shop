@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "Dropdown"
+        "Dropdown",
+        "navbar"
     ]
 }
