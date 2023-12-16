@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Head from 'next/head'
+import Navbar from './layouts/Navbar/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,13 @@ export default function RootLayout({
           <title>NandoShop</title>
         </Head>
 
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      {/* <main className="flex min-h-screen flex-col items-center justify-between p-24"> */}
+        <main className="">
+          <Navbar />
+          {children}
+        </main>
+      </body>
     </html>
   )
 }

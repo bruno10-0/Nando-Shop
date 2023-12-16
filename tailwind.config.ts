@@ -50,6 +50,19 @@ const config: Config = {
       "dim",
       "nord",
       "sunset",
+      {
+        mytheme: {
+          "primary": "#070A57", 
+          "secondary": "#1d4ed8",
+          "accent": "#86198f",
+          "neutral": "#ffffff",
+          "base-100": "#F5F5F5",  
+          "info": "#22d3ee",                   
+          "success": "#49FF75",
+          "warning": "#FAE122",
+          "error": "#e11d48",
+        },
+      }
     ],
   },
 }
