@@ -51,7 +51,7 @@ const config: Config = {
       "nord",
       "sunset",
       {
-        mytheme: {
+        "nando": {
           "primary": "#070A57", 
           "secondary": "#1d4ed8",
           "accent": "#86198f",
