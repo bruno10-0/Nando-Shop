@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "Dropdown",
         "navbar",
-        "formatters"
+        "formatters",
+        "documentation"
     ]
 }
