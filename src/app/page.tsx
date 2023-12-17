@@ -1,7 +1,13 @@
+"use client"
+
+import { useEffect } from "react"
+
 export default function Home() {
-  return (
-    
-      <h1>Este es el Main</h1>
-    
-  )
+  useEffect(()=>{
+    const themeStorage: string = localStorage.getItem('nandoshop_theme') || 'nando';
+    const htmlDom = document.querySelector('html');
+    htmlDom?.setAttribute('data-theme', themeStorage);
+
+  },[])
+  return <></> 
 }
