@@ -1,3 +1,5 @@
+import React from 'react';
+
 
 const DrawerNavbar = () => {
     
@@ -19,8 +21,12 @@ const DrawerNavbar = () => {
     )
 }
 
+interface DrawerProps {
+    children: React.ReactNode
+}
+
 // Boton del Drawer 
-const DrawerButton = ({children}) => {
+const DrawerButton: React.FC<DrawerProps> = ({children}) => {
     return(
         <>
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -34,7 +40,7 @@ const DrawerButton = ({children}) => {
 }
 
 // Contenido del Drawer
-const DrawerSide = ({children}) => {
+const DrawerSide: React.FC<DrawerProps> = ({children}) => {
     return (
         <div className="drawer-side">
             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>

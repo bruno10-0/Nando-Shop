@@ -16,7 +16,7 @@ const Navbar = () => {
 
             {/* Logo */}
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">NandoShop</a>
             </div>
 
             <div className="flex-none">
@@ -27,19 +27,14 @@ const Navbar = () => {
                 </Dropdown>
 
                 {/* Renderiza todos lo temas de daisyUI */}
-                <Dropdown title="Temas" listClassName="p-0">
-                    <ul tabIndex={0} className="dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-52 m-0">
+                <Dropdown title="Temas" listClassName="overflow-y-auto overflow-x-hidden max-h-[calc(100vh-10rem)] h-[28.6rem] gap-3 inline-flex flex-col">
 
-                        {/* Da un valor defecto */}
-                        <InputTheme ariaLabel="default" value="default" isDefault={ true }/>
-
-                        {themes.map((theme, index) => {
-                            return <InputTheme key={index} ariaLabel={ theme } value={ theme }/>
-                        })}
-                        
-                    </ul>
+                    {themes.map((theme, index) => {
+                        return <InputTheme key={index} ariaLabel={ theme } value={ theme }/>
+                    })}
+                    
                 </Dropdown>
-
+                
 
                 <CartNavbar />
 
