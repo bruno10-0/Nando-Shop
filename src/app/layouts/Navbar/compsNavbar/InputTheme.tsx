@@ -1,7 +1,8 @@
 'use client'
+import React from "react";
 import { StringFormater } from "@/utils/formatters/CapitalizeFirstLetterFormatter";
 import DisplayFormater from "@/utils/formatters/DisplayFormatter";
-import React from "react";
+import { localStorageHelpers } from "@/utils/helpers/LocalStorageHelpers";
 
 interface ThemeProps {
   ariaLabel: string;
@@ -58,7 +59,7 @@ const InputItem: React.FC<InputProps> = ({ ariaLabel, value }) => {
 
 // Guarda el valor del tema en el local storage
 const handleChange = (value: string) => {
-  localStorage.setItem('nandoshop_theme', value);
+  localStorageHelpers.setStorage('nandoshop_theme', value)
 };
 
 // Start : PalleteColor (Muestra los colores primarios, secundarios, acentos y neutral)
