@@ -1,3 +1,4 @@
+import { StringHelpers } from "../helpers/StringHelpers";
 import { StringFormatInterface } from "../interfaces/String.interface";
 
 export namespace StringFormater{
@@ -9,10 +10,7 @@ export namespace StringFormater{
                 return input;
             }
       
-            const firstLetter = input.charAt(0).toUpperCase();
-            const restOfString = input.slice(1);
-      
-            return firstLetter + restOfString;
+            return StringHelpers.CapitalizeFirstLetter(input);
         }
     }
 }
