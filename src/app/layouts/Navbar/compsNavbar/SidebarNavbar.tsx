@@ -1,11 +1,11 @@
 'use client'
 import React from 'react';
-import style from './DrawerNavbar.module.css'
+import style from './SidebarNavbar.module.css'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+// Start SidebarNavbar
 const SidebarNavbar = () => {
-
     return(
         <div className="drawer">
             {/* Boton del menu que abre el drawer-side (Ln:12) */}
@@ -27,6 +27,7 @@ const SidebarNavbar = () => {
         </div>
     )
 }
+// End SidebarNavbar
 
 // Start : LinkItem
 interface LinkProps {
