@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DrawerNavbar from "./compsNavbar/DrawerNavbar";
+import SidebarNavbar from "./compsNavbar/SidebarNavbar";
 import Dropdown from "@/components/dropdown/Dropdown";
 import { themes } from "./dataNavbar";
 import InputTheme from "./compsNavbar/InputTheme";
@@ -13,7 +13,7 @@ const Navbar = () => {
 
             {/* Sidebar */}
             <div className="flex-none">
-                <DrawerNavbar />
+                <SidebarNavbar />
             </div>
 
             {/* Logo */}
