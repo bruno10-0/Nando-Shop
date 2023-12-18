@@ -5,9 +5,11 @@ import { themes } from "./dataNavbar";
 import InputTheme from "./compsNavbar/InputTheme";
 import CartNavbar from "./compsNavbar/CartNavbar";
 
+import style from "./Navbar.module.css"
+
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 fixed">
 
             {/* Sidebar */}
             <div className="flex-none">
@@ -16,23 +18,21 @@ const Navbar = () => {
 
             {/* Logo */}
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">NandoShop</a>
+                <a className="btn btn-ghost text-xl hidden md:flex align-center">NandoShop</a>
             </div>
 
-            <div className="flex-none">
+            <div className={ `${ style.NavbarOptions } flex-none` }>
 
-                <Dropdown title="Paginas" accessibilityLabel="Ver Paginas">
+                {/* <Dropdown title="Paginas" accessibilityLabel="Ver Paginas">
                     <li><a>Link 1</a></li>
                     <li><a>Link 2</a></li>
-                </Dropdown>
+                </Dropdown> */}
 
                 {/* Renderiza todos lo temas de daisyUI */}
                 <Dropdown title="Temas" listClassName="overflow-y-auto overflow-x-hidden max-h-[calc(100vh-10rem)] h-[28.6rem] gap-3 inline-flex flex-col">
-
                     {themes.map((theme, index) => {
                         return <InputTheme key={index} ariaLabel={ theme } value={ theme }/>
                     })}
-                    
                 </Dropdown>
                 
 

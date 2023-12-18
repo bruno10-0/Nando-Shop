@@ -1,5 +1,5 @@
 import React from 'react';
-
+import style from './DrawerNavbar.module.css'
 
 const DrawerNavbar = () => {
     
@@ -13,8 +13,10 @@ const DrawerNavbar = () => {
             {/* Lista del drawer (Ln:37) */}
             <DrawerSide>
                 <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-                    <li><a>Ropa Hombre</a></li>
-                    <li><a>Ropa Mujer</a></li>
+                    <label htmlFor="my-drawer" className={`${ style.btnDrawerClose } btn btn-square btn-ghost drawer-button`}>X</label>
+                    <li><a>Tienda</a></li>
+                    <li><a>Sobre Nosotros</a></li>
+                    <li><a>Contacto</a></li>
                 </ul>
             </DrawerSide>
         </div>
