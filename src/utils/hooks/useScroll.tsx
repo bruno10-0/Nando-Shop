@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * Detecta si el scroll se movio para arriba
+ * @returns 
+ */
 const useScroll = () => {
   const [scrollUp, setScrollUp] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
