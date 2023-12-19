@@ -5,22 +5,10 @@ import InputTheme from "./compsNavbar/InputTheme";
 import { useState } from "react";
 import SearchbarNavbar from "./compsNavbar/SearchbarNavbar";
 import style from "./Navbar.module.css"
-
+import useScroll from "@/utils/hooks/useScroll";
 const Navbar = () => {
-    const [ scrollUp, setScrollUp ] = useState(true);
-    let ubicacionPrincipal = window.scrollY;
-
-    window.onscroll = () => {
-        let desplazamiento = window.scrollY;
-        if (ubicacionPrincipal >= desplazamiento) {
-            setScrollUp(true)
-        } 
-        else{
-            setScrollUp(false)
-        }
-        ubicacionPrincipal = desplazamiento;
-    }
-    
+    // const [ scrollUp, setScrollUp ] = useState(true);
+    const { scrollUp } = useScroll();
 
     return (
         <div className="flex flex-column">
