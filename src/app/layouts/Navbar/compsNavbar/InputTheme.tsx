@@ -22,8 +22,7 @@ const InputTheme: React.FC<ThemeProps> = ({ ariaLabel, value }) => {
   const valueFormatted = textDisplay.formatAndDisplay(value);
 
   return (
-    <li>
-        <>
+    <li className="mr-2">    
           <label htmlFor={`theme-${value}`} data-theme={value} className="col-span-5 row-span-3 row-start-1 flex items-center gap-2 px-4 py-3 bg-base-100 " >
             <PalleteColors />
 
@@ -31,7 +30,6 @@ const InputTheme: React.FC<ThemeProps> = ({ ariaLabel, value }) => {
           </label>
 
           <InputItem ariaLabel={ ariaLabel } value={ value }/>
-        </>
     </li>
   );
 };
