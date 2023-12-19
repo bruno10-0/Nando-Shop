@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Start : Dropdown (Ln:23)
 interface DropdownProps {
   title: string;
   children: React.ReactNode;
@@ -24,19 +25,14 @@ const Dropdown: React.FC<DropdownProps> = ({
     children, 
     listClassName = 'p-2 bg-base-100 rounded-t-none', 
     containerClassName = 'px-1', 
-    accessibilityLabel,
+    accessibilityLabel = '',
     btnClassName = ''
-}) => {
-
-    // Si las props de clases no estan definidas, asignarle valores por defecto
-    // const listClass = listClassName;
-    const containerClass = `dropdown dropdown-end ${containerClassName}`
+    }) => {
 
     return(
         <div className={`dropdown dropdown-bottom dropdown-end ${containerClassName}`}>
             
-
-                <div tabIndex={0} role="button" className={`btn m-1 ${btnClassName}`}>{ title }</div>
+                <ButtonDropdown title={ title } accessibilityLabel={ accessibilityLabel } btnClassName={ btnClassName }/>
                 <ul tabIndex={0} className={`dropdown-content z-[100] menu p-2 shadow bg-base-100 rounded-box w-52  ${listClassName}`}>
                     <div className='overflow-y-auto gap-3 flex flex-col'>
 
@@ -45,26 +41,24 @@ const Dropdown: React.FC<DropdownProps> = ({
                 </ul>
             
         </div>
-
-        // <ul className={ containerClass }>
-        //     <li>
-        //         <details>
-                    
-        //             <summary>
-        //                 { accessibilityLabel ? 
-        //                     <span aria-label={ accessibilityLabel }>{ title }</span> 
-        //                     : title 
-        //                 }
-        //             </summary>
-
-                    
-        //             <ul className={ listClassName }>
-        //                 { children }
-        //             </ul>
-        //         </details>
-        //     </li>
-        // </ul>
     );
 }
+// End : Dropdown
+
+// Start : ButtonDropdown (Ln:53)
+interface DropdownButtonProps {
+    title: string;
+    btnClassName: string;
+    accessibilityLabel: string;
+}
+
+const ButtonDropdown: React.FC<DropdownButtonProps> = ({ title, btnClassName, accessibilityLabel }) => {
+    return (
+        <div tabIndex={0} role="button" className={`btn m-1 ${btnClassName}`} aria-label={ accessibilityLabel }>
+            { title }
+        </div>
+    )
+}
+// End : ButtonDropdown
 
 export default Dropdown
