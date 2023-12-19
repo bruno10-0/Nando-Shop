@@ -1,3 +1,6 @@
+"use client"
+// import { useScroll } from "framer-motion"
+import { scroll } from "framer-motion"
 import Image from "next/image";
 import SidebarNavbar from "./compsNavbar/SidebarNavbar";
 import Dropdown from "@/components/dropdown/Dropdown";
@@ -6,10 +9,26 @@ import InputTheme from "./compsNavbar/InputTheme";
 import CartNavbar from "./compsNavbar/CartNavbar";
 
 import style from "./Navbar.module.css"
+import { useState } from "react";
 
 const Navbar = () => {
+    const [ scrollUp, setScrollUp ] = useState(true);
+    let ubicacionPrincipal = window.scrollY;
+
+    window.onscroll = () => {
+        let desplazamiento = window.scrollY;
+        if (ubicacionPrincipal >= desplazamiento) {
+            setScrollUp(true)
+        } 
+        else{
+            setScrollUp(false)
+        }
+        ubicacionPrincipal = desplazamiento;
+    }
+    
+
     return (
-        <div className="navbar bg-base-100 fixed">
+        <div className={`navbar bg-base-100 fixed transition-all duration-500 ${scrollUp ? 'translate-y-0 opacity-100':'-translate-y-full opacity-0'}`} >
 
             {/* Sidebar */}
             <div className="flex-none">
@@ -22,11 +41,6 @@ const Navbar = () => {
             </div>
 
             <div className={ `${ style.NavbarOptions } flex-none` }>
-
-                {/* <Dropdown title="Paginas" accessibilityLabel="Ver Paginas">
-                    <li><a>Link 1</a></li>
-                    <li><a>Link 2</a></li>
-                </Dropdown> */}
 
                 {/* Renderiza todos lo temas de daisyUI */}
                 <Dropdown title="Temas" listClassName="overflow-y-auto overflow-x-hidden max-h-[calc(100vh-10rem)] h-[28.6rem] gap-3 inline-flex flex-col">
