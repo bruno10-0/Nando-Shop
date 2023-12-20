@@ -3,6 +3,7 @@
         "Dropdown",
         "navbar",
         "formatters",
-        "documentation"
+        "documentation",
+        "test"
     ]
 }
