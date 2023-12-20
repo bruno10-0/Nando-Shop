@@ -30,10 +30,10 @@ const Dropdown: React.FC<DropdownProps> = ({
     }) => {
 
     return(
-        <div className={`dropdown dropdown-bottom dropdown-end ${containerClassName}`}>
+        <div className={`dropdown dropdown-bottom dropdown-end ${containerClassName}`} data-testid="Dropdown-container">
             
-                <ButtonDropdown title={ title } accessibilityLabel={ accessibilityLabel } btnClassName={ btnClassName }/>
-                <ul tabIndex={0} className={`dropdown-content z-[100] menu p-2 shadow bg-base-100 rounded-box w-52  ${listClassName}`}>
+                <ButtonDropdown title={ title } accessibilityLabel={ accessibilityLabel } btnClassName={ btnClassName } />
+                <ul tabIndex={0} className={`dropdown-content z-[100] menu p-2 shadow bg-base-100 rounded-box w-52  ${listClassName}`} data-testid="Dropdown-list">
                     <div className='overflow-y-auto gap-3 flex flex-col'>
 
                     { children }
@@ -54,7 +54,7 @@ interface DropdownButtonProps {
 
 const ButtonDropdown: React.FC<DropdownButtonProps> = ({ title, btnClassName, accessibilityLabel }) => {
     return (
-        <div tabIndex={0} role="button" className={`btn m-1 ${btnClassName}`} aria-label={ accessibilityLabel }>
+        <div tabIndex={0} role="button" className={`btn m-1 ${btnClassName}`} aria-label={ accessibilityLabel } data-testid="Dropdown-button">
             { title }
         </div>
     )
