@@ -10,7 +10,7 @@ interface SearchProps {
 
 const SearchbarNavbar: React.FC<SearchProps> = ({ scrollUp }) => {
     return(
-        <div className={`flex justify-center w-full bg-base-100 transition-all top-11 fixed left-0 rigth-0 duration-500 ${scrollUp ? 'translate-y-0 opacity-100':'-translate-y-full opacity-0'}`}>
+        <div className={`flex justify-center w-full bg-base-100 transition-all fixed left-0 rigth-0 duration-500 ${scrollUp ? 'translate-y-0 opacity-100':'-translate-y-full opacity-0'}`} style={{top: "2.5rem"}}>
             <div className="container flex">
                 {/* Sidebar */}
                 <div className="flex-none z-50">

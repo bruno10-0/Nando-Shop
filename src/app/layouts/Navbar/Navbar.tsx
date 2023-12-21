@@ -11,7 +11,7 @@ const Navbar = () => {
     const { scrollUp } = useScroll();
 
     return (
-        <div className="flex flex-column">
+        <div className="flex flex-column absolute z-50">
             <div className={`bg-base-100 z-[10] fixed transition-all duration-500 w-full justify-end flex ${scrollUp ? 'translate-y-0 opacity-100':'-translate-y-full opacity-0 z-[-1]'}`} >
                 <div className={ `${ style.NavbarOptions } flex-none` }>
 
