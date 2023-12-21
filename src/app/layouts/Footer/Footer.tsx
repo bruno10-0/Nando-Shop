@@ -8,21 +8,21 @@ const Footer: React.FC = () => {
         <>
         <footer className="footer p-10 bg-base-200 text-base-content">
             <nav>
-                <header className="footer-title">Servicios</header> 
+                <header className="footer-title text-primary">Servicios</header> 
                 <LinkFooter>Marca</LinkFooter>
                 <LinkFooter>Diseño</LinkFooter>
                 <LinkFooter>Marketing</LinkFooter>
                 <LinkFooter>Publicidad</LinkFooter>
             </nav> 
             <nav>
-                <header className="footer-title">Compañia</header> 
+                <header className="footer-title text-primary">Compañia</header> 
                 <LinkFooter>Sobre Nosotros</LinkFooter>
                 <LinkFooter>Contacto</LinkFooter>
                 <LinkFooter>Trabajos</LinkFooter>
                 <LinkFooter>Novedades</LinkFooter>
             </nav> 
             <nav>
-                <header className="footer-title">Legal</header> 
+                <header className="footer-title text-primary">Legal</header> 
                 <LinkFooter>Termino de uso</LinkFooter>
                 <LinkFooter>Politica de Privacidad</LinkFooter>
                 <LinkFooter>Politica de Cookies</LinkFooter>
