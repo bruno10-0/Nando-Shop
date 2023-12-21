@@ -14,14 +14,10 @@ export default function Home() {
   return (
     <>
       <div className="container mx-auto mb-10 flex">
-        <Hero />
-        <h1>
-           <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-           <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-           <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-           <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-           <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        </h1>
+        
+
+          <Hero />
+        
       </div>
     </>
   ) 
