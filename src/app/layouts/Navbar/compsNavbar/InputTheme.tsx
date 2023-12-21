@@ -23,10 +23,10 @@ const InputTheme: React.FC<ThemeProps> = ({ ariaLabel, value }) => {
 
   return (
     <li className="mr-2">    
-          <label htmlFor={`theme-${value}`} data-theme={value} className="col-span-5 row-span-3 row-start-1 flex items-center gap-2 px-4 py-3 bg-base-100 " >
+          <label htmlFor={`theme-${value}`} data-testid="InputTheme-label" data-theme={value} className="col-span-5 row-span-3 row-start-1 flex items-center gap-2 px-4 py-3 bg-base-100 " >
             <PalleteColors />
 
-            <span className="flex-grow text-sm w-100 " >{ valueFormatted }</span> 
+            <span className="flex-grow text-sm w-100 " data-testid="InputTheme-span">{ valueFormatted }</span> 
           </label>
 
           <InputItem ariaLabel={ ariaLabel } value={ value }/>
@@ -50,6 +50,7 @@ const InputItem: React.FC<InputProps> = ({ ariaLabel, value }) => {
       value={value}
       onChange={() => handleChange(value)} 
       id={`theme-${value}`}
+      data-testid="InputTheme-input"
     />
   );
 }
