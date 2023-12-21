@@ -1,5 +1,6 @@
 "use client"
 
+import Hero from "@/components/heros/Hero";
 import { useEffect } from "react"
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <div className="container mx-auto mb-10 flex">
+        <Hero />
         <h1>
            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
