@@ -26,9 +26,9 @@ const Hero: React.FC = () => {
         <div className='flex box-border flex-wrap border-box' style={{width: "100%"}}>
 
             <SliderCustomHelpers.heroCustomHelper datas={data1} className='h-4/6 z-20 w-2/3 flex items-center' />
-            {/* <SliderCustomHelpers.heroCustomHelper datas={data2} className='h-4/6 z-20 w-1/3' />
+            <SliderCustomHelpers.heroCustomHelper datas={data2} className='h-4/6 z-20 w-1/3' />
             <SliderCustomHelpers.heroCustomHelper datas={data3} className='h-50 z-20 w-1/3' />
-            <SliderCustomHelpers.heroCustomHelper datas={data4} className='h-50 z-20 w-2/3' /> */}
+            <SliderCustomHelpers.heroCustomHelper datas={data4} className='h-50 z-20 w-2/3' />
             {/* <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
