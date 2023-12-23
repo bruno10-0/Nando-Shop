@@ -1,4 +1,5 @@
-import React from 'react';
+import useClickOutside from '@/utils/hooks/useClickOutside';
+import React, { MouseEventHandler, useEffect, useRef, useState } from 'react';
 
 // Start : Dropdown (Ln:23)
 interface DropdownProps {
@@ -28,12 +29,35 @@ const Dropdown: React.FC<DropdownProps> = ({
     accessibilityLabel = '',
     btnClassName = ''
     }) => {
+    const dropdownRef = useRef<HTMLDivElement>(null);
+    const [ open, setOpen ] = useState(false);
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent): void => {
+            // if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            //     // El clic está fuera del componente, puedes realizar acciones aquí
+            //     console.log('Clic fuera del componente');
+            // }
+            if (dropdownRef.current && dropdownRef.current.contains(event.target as Node)) {
+                console.log('click dentro del componente')
+                setOpen(true)
+            }else{
+                console.log('click fuera del componente')
+                setOpen(false)
+            }
+        };
+    
+        document.addEventListener('click', handleClickOutside);
+    
+        return () => {
+          document.removeEventListener('click', handleClickOutside);
+        };
+      }, []);
 
     return(
-        <div className={`dropdown dropdown-bottom dropdown-end ${containerClassName}`} data-testid="Dropdown-container">
+        <div className={`dropdown dropdown-bottom dropdown-end ${containerClassName}`} data-testid="Dropdown-container" ref={dropdownRef}>
             
-                <ButtonDropdown title={ title } accessibilityLabel={ accessibilityLabel } btnClassName={ btnClassName } />
-                <ul tabIndex={0} className={`dropdown-content z-[100] menu p-2 shadow bg-base-100 rounded-box w-52  ${listClassName}`} data-testid="Dropdown-list">
+                <ButtonDropdown title={ title } accessibilityLabel={ accessibilityLabel } btnClassName={ btnClassName } onclick={()=>{}}/>
+                <ul tabIndex={0} style={(open) ? {}:{visibility: 'hidden',opacity: '1', transition: '.1s'}} className={`dropdown-content z-[100] menu p-2 shadow bg-base-100 rounded-box w-52  ${listClassName}`} data-testid="Dropdown-list" >
                     <div className='overflow-y-auto gap-3 flex flex-col'>
 
                     { children }
@@ -50,11 +74,12 @@ interface DropdownButtonProps {
     title: string;
     btnClassName: string;
     accessibilityLabel: string;
+    onclick: MouseEventHandler<HTMLDivElement>;
 }
 
-const ButtonDropdown: React.FC<DropdownButtonProps> = ({ title, btnClassName, accessibilityLabel }) => {
+const ButtonDropdown: React.FC<DropdownButtonProps> = ({ title, btnClassName, accessibilityLabel, onclick }) => {
     return (
-        <div tabIndex={0} role="button" className={`btn m-1 ${btnClassName}`} aria-label={ accessibilityLabel } data-testid="Dropdown-button">
+        <div tabIndex={0} role="button" className={`btn m-1 ${btnClassName}`} aria-label={ accessibilityLabel } data-testid="Dropdown-button" onClick={onclick}>
             { title }
         </div>
     )
