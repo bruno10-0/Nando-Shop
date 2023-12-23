@@ -3,8 +3,8 @@ import { HerosCustomHelpers } from "../helpers/HerosCustomHelpers";
 
 interface HeroFactoryInterface{
     createHero(type: string, props: HerosCustomHelpers.SimplePropsHelper): React.ReactNode | null;
-    createHero(type: 'simple-description', props: HerosCustomHelpers.SimpleDescriptionPropsHelper): React.ReactNode | null;
-    createHero(type: 'login', props: HerosCustomHelpers.LoginPropshelper): React.ReactNode | null;
+    createHero(type: string, props: HerosCustomHelpers.SimpleDescriptionPropsHelper): React.ReactNode | null;
+    createHero(type: string, props: HerosCustomHelpers.LoginPropshelper): React.ReactNode | null;
 }
 
 const HeroFactory: HeroFactoryInterface = {

@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Mousewheel } from 'swiper/modules';
 import HeroFactory from "../factories/HeroFactory";
+import { HerosCustomHelpers } from "./HerosCustomHelpers";
 
 interface Childreable{
     children?: React.ReactNode;
@@ -38,10 +39,10 @@ export namespace SliderCustomHelpers{
                     className={`mySwiper ${className}`}
             >
                 {
-                    datas.map((data: Record<string,any>,index:number) => {
+                    datas.map((data:HerosCustomHelpers.SimplePropsHelper | HerosCustomHelpers.SimpleDescriptionPropsHelper | HerosCustomHelpers.LoginPropshelper,index:number) => {
                         return (
                             <SwiperSlide key={index}>
-                                {HeroFactory.createHero(data.type, data)}
+                                {renderHero(data)}
                             </SwiperSlide>
                         )
                     })
@@ -49,4 +50,16 @@ export namespace SliderCustomHelpers{
             </Swiper>
         )
     }
+    const renderHero = (data: HerosCustomHelpers.SimplePropsHelper | HerosCustomHelpers.SimpleDescriptionPropsHelper | HerosCustomHelpers.LoginPropshelper) => {
+        switch (data.type) {
+            case 'simple':
+                return <HerosCustomHelpers.simple {...(data as HerosCustomHelpers.SimplePropsHelper)} />;
+            case 'simple-description':
+                return <HerosCustomHelpers.simpleDescription {...(data as HerosCustomHelpers.SimpleDescriptionPropsHelper)} />;
+            case 'login':
+                return <HerosCustomHelpers.login {...(data as HerosCustomHelpers.LoginPropshelper)} />;
+            default:
+                return null;
+        }
+    };
 }

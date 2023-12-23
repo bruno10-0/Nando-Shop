@@ -1,14 +1,18 @@
 import React from "react"
 
-interface HeroBaseProps {
-    title: string;
-    btnText: string;
-}
+// interface HeroBaseProps {
+//     title: string;
+//     btnText: string;
+// }
 
 
 export namespace HerosCustomHelpers{
 
-    export interface SimplePropsHelper extends HeroBaseProps{}
+    export interface SimplePropsHelper {
+        title: string;
+        btnText: string;
+        type: string;
+    }
     export const simple: React.FC<SimplePropsHelper> = ({title, btnText}) => {
         return(
             <div className="hero-content text-center bg-base-200 " style={{height: "inherit"}}>
@@ -24,6 +28,7 @@ export namespace HerosCustomHelpers{
         title: string;
         description: string;
         btnText: string;
+        type: string;
     }
     export const simpleDescription: React.FC<SimpleDescriptionPropsHelper> = ({title, btnText, description}) => {
         return(
@@ -38,6 +43,7 @@ export namespace HerosCustomHelpers{
     }
     export interface LoginPropshelper{
         description: string;
+        type: string;
     }
     export const login: React.FC<LoginPropshelper> = ({ description }) => {
         return(
