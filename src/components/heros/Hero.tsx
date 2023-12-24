@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
 
             <SliderCustomHelpers.heroCustomHelper datas={data1} className='z-20 flex items-center w-full xl:w-2/3 xl:h-4/6 lg:h-auto lg:w-full' />
             <SliderCustomHelpers.heroCustomHelper datas={data2} className='z-20 xl:h-4/6 md:h-auto lg:w-full xl:w-1/3' />
-            <SliderCustomHelpers.heroCustomHelper datas={data3} className='h-50 z-20 w-full sm:w-full sm:h-auto md:w-1/3' />
+            <SliderCustomHelpers.heroCustomHelper datas={data3} className='h-50 z-20 w-1/3 sm:w-full sm:h-auto md:w-1/3' />
             <SliderCustomHelpers.heroCustomHelper datas={data4} className='h-50 z-20 sm:w-full md:w-2/3' />
             
         </div> 
