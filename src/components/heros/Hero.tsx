@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
     ]
 
     return(
-        <div className='flex box-border flex-wrap border-box' style={{width: "100%"}}>
+        <div className='flex box-border flex-wrap border-box mb-28' style={{width: "100%"}}>
 
             <SliderCustomHelpers.heroCustomHelper datas={data1} className='z-20 flex items-center w-full xl:w-2/3 xl:h-4/6 lg:h-auto lg:w-full' />
             <SliderCustomHelpers.heroCustomHelper datas={data2} className='z-20 xl:h-4/6 md:h-auto lg:w-full xl:w-1/3' />
