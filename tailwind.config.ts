@@ -19,11 +19,22 @@ const config: Config = {
     container: {
       padding: {
         DEFAULT: '1rem',
+        // 'xsm': '0rem',
         sm: '2rem',
         lg: '4rem',
         xl: '5rem',
         '2xl': '6rem',
       },
+    },
+    borderWidth: {
+      DEFAULT: '1px',
+      '0': '0',
+      '5': '5px',
+      '10': '10px',
+      '20': '20px',
+      '30': '30px',
+      '40': '40px',
+      '50': '50px',
     }
   },
   plugins: [require("daisyui")],
