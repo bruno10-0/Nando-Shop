@@ -1,6 +1,7 @@
 "use client"
 
 import Hero from "@/components/heros/Hero";
+import ProductsOffers from "@/components/products/ProductsOffers";
 import { useEffect } from "react"
 
 export default function Home() {
@@ -13,11 +14,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="container mx-auto mb-10 flex">
+      <div className="container mx-auto mb-10 ">
         
 
           <Hero />
-        
+          <ProductsOffers />    
       </div>
     </>
   ) 

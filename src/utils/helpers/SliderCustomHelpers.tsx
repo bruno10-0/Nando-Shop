@@ -32,9 +32,7 @@ export namespace SliderCustomHelpers{
     export const heroCustomHelper: React.FC<HeroCustomHelper> = ({datas, className = ''}) => {
         return(
             <Swiper
-                    pagination={{
-                        dynamicBullets: true,
-                    }}
+                    pagination={{dynamicBullets: true,}}
                     modules={[Pagination]}
                     className={`mySwiper ${className}`}
             >
@@ -47,6 +45,22 @@ export namespace SliderCustomHelpers{
                         )
                     })
                 }      
+            </Swiper>
+        )
+    }
+    export interface SimplePropsHelper extends Childreable{}
+    export const perView: React.FC<Childreable> = ({children}) => {
+        return (
+            <Swiper
+                slidesPerView={'auto'}
+                spaceBetween={30}
+                pagination={{
+                clickable: true,
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
+                {children}
             </Swiper>
         )
     }

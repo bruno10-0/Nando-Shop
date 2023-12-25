@@ -1,0 +1,38 @@
+.content{
+    padding: 20px;
+}
+
+.listProducts{
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.product{
+    width: 200px;
+    min-width: 200px;
+    box-sizing: border-box;
+    /* border: 10px solid transparent; */
+    height: 200px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 150px);
+    
+    /* height: 100%; */
+}
+
+
+.swiperSlide{
+    width: auto !important  ;
+}
