@@ -52,22 +52,22 @@ const ProductsOffers: React.FC = () => {
                     {selectedId && (
                             <div className="w-screen h-screen flex fixed top-0 left-0 " style={{zIndex: "100000000", backgroundColor: '#0006'}}>
                                 <motion.div layoutId={String(selectedId)} className={`card m-auto shadow-xl bg-base-200 inset-y-0 inset-x-0 ${style.modal}`} >
-                                    <div className="w-[48rem] h-full flex flex-col p-0">
+                                    <div className="w-screen sm:w-[30rem] md:w-[48rem] h-full flex flex-col p-0">
 
                                         {/* <div className={`card flex w-96 shadow-xl bg-primary inset-y-0 inset-x-0 `}>
                                             perrorne
                                         </div> */}
                                         <div className="h-full justify-end">
-                                            <button className="btn btn-square btn-sm absolute" onClick={() => setSelectedId(null)} style={{top: '-20px', right: '-20px', zIndex: "13"}}>
+                                            <button className={` z-30 btn btn-square btn-sm absolute ${style.btnClose}`} onClick={() => setSelectedId(null)} >
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                             </button>
 
-                                            <div className="flex justify-between items-center h-full bg-primary card overflow-hidden flex flex-row relative" style={{zIndex: "10"}}>
-                                                <div className="w-1/2 h-full bg-base-200 absolute" style={{zIndex:"15"}}></div>
-                                                <div className=" w-1/2 bg-base-200 h-full flex items-center justify-center" style={{zIndex:"20"}}>
-                                                    <Image alt="Tailwind CSS Navbar component" className="hover:rotate-45 duration-300" src={String(selectedItem?.image)} width={380} height={200}/>
+                                            <div className="flex justify-between items-center h-full bg-primary card overflow-hidden flex sm:flex-col md:flex-row relative" style={{zIndex: "10"}}>
+                                                <div className="h-48 w-full md:h-full sm:h-40 sm:w-full md:w-1/2 md:h-full bg-base-200 absolute" style={{zIndex:"15"}}></div>
+                                                <div className=" w-1/2 h-48 sm:h-40 md:h-full flex items-center justify-center" style={{zIndex:"40"}}>
+                                                    <Image alt="Tailwind CSS Navbar component" className="sm:hover:rotate-[20deg] sm:hover:translate-y-10 md:hover:rotate-45 duration-300" src={String(selectedItem?.image)} width={380} height={200} />
                                                 </div>
-                                                <div className="w-1/2 h-full p-7">
+                                                <div className="sm:w-full md:w-1/2 h-full p-7">
                                                     <div className={`${style.modalContentHeader} mb-5`}>
                                                         <h3 className={`${anton.className} text-base-200 text-4xl`}>NIKE AIR MAX</h3>
                                                         <span className={`${poiret_one.className} text-base-200 text-2xl font-semibold`}>Ropa Hombres</span>

@@ -36,7 +36,15 @@
 .swiperSlide{
     width: auto !important  ;
 }
-
-.modalContentHeader{
-    
+.btnClose{
+    top: -20px;
+    right: -20px;
+    z-index: 13;
+}
+@media (max-width: 640px){
+    .btnClose{
+        top: 0 !important;
+        right: 0 !important;
+        /* z-index: 13; */
+    }
 }
