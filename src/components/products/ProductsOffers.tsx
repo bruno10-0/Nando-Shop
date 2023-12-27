@@ -1,9 +1,10 @@
 'use client'
 import Image from "next/image";
-import { montserrat } from "@/fonts/fonts";
+import { montserrat, anton, poiret_one, mitr, bungee, paytone_One } from "@/fonts/fonts";
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react";
 import style from './ProductsOffers.module.css';
+import './productsOffers/productsOffers.css'
 import { SwiperSlide } from "swiper/react";
 import { SliderCustomHelpers } from "@/utils/helpers/SliderCustomHelpers";
 
@@ -33,8 +34,11 @@ const ProductsOffers: React.FC = () => {
                         items.map(item => (
                             <SwiperSlide key={item.id} className={style.swiperSlide}>
 
-                                <motion.div layoutId={String(item.id)} className={`card bg-base-200  ${style.product}`} onClick={() => setSelectedId(item.id)}>
-                                    <Image alt="Tailwind CSS Navbar component" src={item.image} width='150' height="100"/>
+                                <motion.div layoutId={String(item.id)} className={`card bg-base-200 relative ${style.product}`} onClick={() => setSelectedId(item.id)}>
+                                        <div className="badge badge-primary gap-2 top-3 right-3 absolute">
+                                            <span className="text-sm">-30%</span>
+                                        </div>
+                                    <Image alt="Tailwind CSS Navbar component" src={item.image} width='150' height="100" quality={10}/>
                                 </motion.div>
                                 
                             </SwiperSlide>
@@ -46,22 +50,61 @@ const ProductsOffers: React.FC = () => {
                 </div>
                 <AnimatePresence>
                     {selectedId && (
-                            <div className="w-screen h-screen fixed top-0 left-0 " style={{zIndex: "100000000", backgroundColor: '#0006'}}>
-                                <motion.div layoutId={String(selectedId)} className={`card w-96 shadow-xl bg-secondary inset-y-0 inset-x-0 ${style.modal}`} >
+                            <div className="w-screen h-screen flex fixed top-0 left-0 " style={{zIndex: "100000000", backgroundColor: '#0006'}}>
+                                <motion.div layoutId={String(selectedId)} className={`card m-auto shadow-xl bg-base-200 inset-y-0 inset-x-0 ${style.modal}`} >
+                                    <div className="w-[48rem] h-full flex flex-col p-0">
 
-                                    <div className="card-body">
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-square btn-sm" onClick={() => setSelectedId(null)}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                                        </button>
-                                    </div>
-                                    <p>We are using cookies for no reason.</p>
+                                        {/* <div className={`card flex w-96 shadow-xl bg-primary inset-y-0 inset-x-0 `}>
+                                            perrorne
+                                        </div> */}
+                                        <div className="h-full justify-end">
+                                            <button className="btn btn-square btn-sm absolute" onClick={() => setSelectedId(null)} style={{top: '-20px', right: '-20px', zIndex: "13"}}>
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                                            </button>
+
+                                            <div className="flex justify-between items-center h-full bg-primary card overflow-hidden flex flex-row relative" style={{zIndex: "10"}}>
+                                                <div className="w-1/2 h-full bg-base-200 absolute" style={{zIndex:"15"}}></div>
+                                                <div className=" w-1/2 bg-base-200 h-full flex items-center justify-center" style={{zIndex:"20"}}>
+                                                    <Image alt="Tailwind CSS Navbar component" className="hover:rotate-45 duration-300" src={String(selectedItem?.image)} width={380} height={200}/>
+                                                </div>
+                                                <div className="w-1/2 h-full p-7">
+                                                    <div className={`${style.modalContentHeader} mb-5`}>
+                                                        <h3 className={`${anton.className} text-base-200 text-4xl`}>NIKE AIR MAX</h3>
+                                                        <span className={`${poiret_one.className} text-base-200 text-2xl font-semibold`}>Ropa Hombres</span>
+                                                    </div>
+                                                    
+                                                    <div className="modalOffert__description mb-5">
+                                                        <h3 className={`text-xl text-base-200 mb-2 ${paytone_One.className}`}>DETALLES</h3>
+                                                        <span className="text-theme text-base-200">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                                            Nemo modi cumque delectus est suscipit aperiam.
+                                                        </span>
+                                                    </div>
+
+                                                    <div className="mb-5">
+                                                        <span className={`text-xl mb-5 text-base-200 ${paytone_One.className}`}>SIZES</span>
+                                                        <div className="modalOffert__sizes">
+                                                            <div className="btn btn-square ">38</div>
+                                                            <div className="btn btn-square ">39</div>
+                                                            <div className="btn btn-square ">40</div>
+                                                            <div className="btn btn-square ">41</div>
+                                                            <div className="btn btn-square ">42</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="flex justify-between mt-5">
+                                                        <p className={`${anton.className} text-5xl text-base-200`}><sup>$</sup>199.<small>99</small></p>
+                                                        <a href="#" className="btn btn-primary text-xl  align-center hover:btn-secondary">Ver Mas</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        {/* <p>We are using cookies for no reason.</p> */}
                                     </div>
                                 
-
-                            {/* <motion.h2>{selectedItem?.title}</motion.h2>
-                            <motion.h5>{selectedItem?.subtitle}</motion.h5>
-                            <motion.button onClick={() => setSelectedId(null)} >X</motion.button> */}
 
                         </motion.div>
                             </div>

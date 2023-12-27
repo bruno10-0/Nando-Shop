@@ -1,6 +1,4 @@
-.content{
-    padding: 20px;
-}
+
 
 .listProducts{
     display: flex;
@@ -20,19 +18,25 @@
 }
 
 .modal{
-    width: 300px;
-    height: 200px;
+    width: min-content;
+    height: min-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    top: calc(50% - 100px);
-    left: calc(50% - 150px);
-    
-    /* height: 100%; */
+    /* position: fixed; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* top: calc(50% - 100px);
+    left: calc(50% - 150px); */
 }
 
 
 .swiperSlide{
     width: auto !important  ;
+}
+
+.modalContentHeader{
+    
 }

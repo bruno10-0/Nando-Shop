@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[data-theme="nando"] .text-theme {
+    color: white !important;
+}

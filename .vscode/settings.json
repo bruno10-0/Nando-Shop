@@ -4,6 +4,7 @@
         "navbar",
         "formatters",
         "documentation",
-        "test"
+        "test",
+        "products"
     ]
 }
