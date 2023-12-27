@@ -3,7 +3,7 @@ import Image from "next/image";
 import { montserrat, anton, poiret_one, mitr, bungee, paytone_One } from "@/fonts/fonts";
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react";
-import style from './ProductsOffers.module.css';
+import style from './productsOffers/ProductsOffers.module.css';
 import './productsOffers/productsOffers.css'
 import { SwiperSlide } from "swiper/react";
 import { SliderCustomHelpers } from "@/utils/helpers/SliderCustomHelpers";
@@ -24,7 +24,7 @@ const ProductsOffers: React.FC = () => {
 
     return(
         <article className="prose">
-            <h2 className={`${montserrat.className} text-3xl`}>Nuestros Productos en Ofertas</h2>
+            <h2 className={`${montserrat.className} text-3xl mb-5`}>Nuestros Productos en Ofertas</h2>
 
             <div className={` ${style.content}`}>
                 <div className={style.listProducts}>
