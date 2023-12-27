@@ -3,8 +3,8 @@ import Image from "next/image";
 import { montserrat, anton, poiret_one, mitr, bungee, paytone_One } from "@/fonts/fonts";
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react";
-import style from './productsOffers/ProductsOffers.module.css';
-import './productsOffers/productsOffers.css'
+import style from './ProductsOffers.module.css';
+import './productsOffers.css'
 import { SwiperSlide } from "swiper/react";
 import { SliderCustomHelpers } from "@/utils/helpers/SliderCustomHelpers";
 

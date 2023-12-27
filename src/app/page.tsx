@@ -1,7 +1,7 @@
 "use client"
 
 import Hero from "@/components/heros/Hero";
-import ProductsOffers from "@/components/products/ProductsOffers";
+import ProductsOffers from "@/components/products/productsOffers/ProductsOffers";
 import { useEffect } from "react"
 
 export default function Home() {
@@ -18,7 +18,8 @@ export default function Home() {
         
 
           <Hero />
-          <ProductsOffers />    
+          <ProductsOffers /> 
+          
       </div>
     </>
   ) 
