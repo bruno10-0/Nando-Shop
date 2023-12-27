@@ -1,7 +1,7 @@
 import React from "react";
 const ProductsList: React.FC = () => {
     return (
-        <p></p>
+        <p>hola</p>
     );
 }
 
