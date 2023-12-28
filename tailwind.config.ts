@@ -93,7 +93,7 @@ const config: Config = {
           "info": "#137D9E",
           "success": "#00B33C",
           "warning": "#CCAA00",
-          "error": "#B50032"
+          "error": "#B50033"
         }
         
         
